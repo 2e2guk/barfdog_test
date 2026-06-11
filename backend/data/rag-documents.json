@@ -1,0 +1,2943 @@
+{
+  "version": "2026-06-11-anonymized-sample",
+  "description": "Public-safe local RAG corpus with project method notes, demo PHR/NGS context, and 36 anonymized NGS sample records.",
+  "anonymization": {
+    "sampleSize": 36,
+    "removed": [
+      "dog names",
+      "exact birth dates",
+      "raw allergen free text",
+      "raw treatment free text",
+      "original row numbers"
+    ],
+    "retained": [
+      "disease group",
+      "age band",
+      "weight band",
+      "sex",
+      "probiotic status",
+      "allergen categories",
+      "treatment categories",
+      "feed type",
+      "NGS diversity metrics",
+      "major taxa values"
+    ]
+  },
+  "documents": [
+    {
+      "id": "project_method_rag_pipeline",
+      "type": "method",
+      "title": "프로젝트 접근 방법 - PHR/NGS 기반 RAG 상담 파이프라인",
+      "keywords": [
+        "접근 방법",
+        "PHR",
+        "NGS",
+        "RAG",
+        "위험도 예측",
+        "질병",
+        "피부염",
+        "IBD",
+        "비만",
+        "식이 솔루션",
+        "바프독"
+      ],
+      "text": "보고서 접근 방법 요약: 사용자의 자연어 질문을 LLM으로 의도/증상 정보로 구조화하고, PHR 및 NGS 데이터를 기반으로 IBD, 피부염, 비만 같은 타겟 질환 위험도를 예측한 뒤, 구조화 입력과 위험도 예측 결과를 결합해 RAG query를 만든다. 이후 내부 database에서 관련 PHR/NGS/수의영양 지식을 검색하고, 검색 결과와 query 정보를 함께 LLM에 전달해 근거 기반 상담형 응답과 맞춤 식이 솔루션을 생성한다. 원문 추출 참고: 접근 방법 개 요 반려동물 건강 데이터를 활용한 모듈형 파이프라인 • IBD, 피부염, 비만 등의 질병 위험도 예측, 내부 지식 검색, 상담형 응답 생성을 연결한 통합형 시스템 • 증상 질문 이해, 질병 위험도 예측, RAG, LLM 기반 상담형 응답 생성 접근 방 법 ① 사용자 질문 이해 및 구조화 - LLM을 통해 사용자의 질문 의도 및 증상 정보 추출 및 구조화 ② 질병 위험도 예측 - PHR, NGS 데이터 기반, 타겟 질병(IBD, 피부염, 비만)의 위험도 예측 ③ RAG query 구성 - 구조화된 사용자 입력, 타겟 질환 위험도 예측 결과를 결합하여 RAG query 생성 접근 방 법 ① RAG 기반 지식 검색 - 생성된 RAG query 기반, 사측 내부 database 에서 관련 문서 검색 ② 검색 결과 기반 응답 생성 - 검색된 문서와 RAG query 정보를 함께 활용하여, LLM이 최종 답변 생성 ③ 근거 기반 맞춤 식이 솔루션 응답 제공 - 타겟 질병 위험도와 검색 근거를 반영한, 반려동물 맞춤 식이 솔루션 제공 및 BARFBOG 상품 연결 시연 영 상 활용 방 안 개인 맞춤형 반려동물 홈케어 및 상시 건강 모니터링 시스템 질병의 조기 발견 및 예방율 상승 정보 부족으로 인한 반려인의 양육 피로도를 낮추는 데 기여 바이오 데이터(NGS) 기반의 맞춤형 펫푸드 추천 및 큐레이션 커머스 연계 데이터 기반의 객관적인 식단 추천으로 보호자의 구매 신뢰도 상승 반려동물 맞춤형 식품 시장의 고도화 동물병원 및 펫케어 산업의 사전 문진 및 상담 보조 시스템 진료 대기 및 상담 시간 단축 문진 방식을 데이터 중심의 정밀 진료 보조 방식으로 개선 생성형 AI와 바이오 데이터 분석 체계를 구성하여, 반려동물 상시 건강 모니터링을 최적화하고 맞춤형 위험도 예측의 정확도 극대화를 기대 합니다. 결 론 단순 기록 관리의 한계 극 복 예방 중심의 능동적 홈케 어 Actionable 맞춤형 솔루션 제 공 파편화되어 있던 PHR과 NGS 데이터 를 LLM의 추론 능력으로 통합 분석하여 정밀한 질병 위험도 예 측 파편화되어 있던 PHR과 NGS 데이터 를 LLM의 추론 능력으로 통합 분석하여 정밀한 질병 위험도 예 측 복잡한 건강 수치를 직관적인 자연어로 해석하고, 즉각적인 맞춤형 식이(바프독) 큐레이션으로 의사결정 지원 단순한 정보 제공을 넘어, 다차원 데이터를 기반으로 위험을 스스로 예측하고 최적의 케어 방안을 행동으로 연결하 는 능동형 펫 헬스케어 플랫폼 향후 계 획 Q & A",
+      "metadata": {
+        "source": "project_report_excerpt"
+      }
+    },
+    {
+      "id": "phr_max_demo_profile",
+      "type": "phr",
+      "title": "맥스 PHR 데모 프로필",
+      "keywords": [
+        "맥스",
+        "Max",
+        "PHR",
+        "골든리트리버",
+        "피부",
+        "알러지",
+        "가려움",
+        "배",
+        "묽은 변",
+        "소화",
+        "건강 추이",
+        "리포트"
+      ],
+      "text": "서비스 데모 반려견 맥스(Max)는 골든리트리버로 설정되어 있으며, 앱의 PHR 흐름은 최근 배를 자주 긁는 증상, 묽은 변, 피부 알러지 및 장 건강 연계 분석을 중심으로 구성되어 있다. AI 위험도 카드에는 피부 알러지 가능성 78% 위험, 소화기 민감도 65% 주의가 표시되고, 바이오 리포트에는 소화/장 위험도 85%, 피부/모질 위험도 78%, 면역력 60%, 비만/대사 45%, 관절/뼈 30%가 표시된다. 건강 추이 화면은 처방식 급여 이후 장내 유익균 증가와 피부 알러지 위험도 감소 흐름을 보여준다.",
+      "metadata": {
+        "petName": "맥스",
+        "breed": "골든리트리버",
+        "skinRisk": 78,
+        "digestiveRisk": 85,
+        "digestiveSensitivity": 65
+      }
+    },
+    {
+      "id": "ngs_max_demo_profile",
+      "type": "ngs",
+      "title": "맥스 NGS 데모 프로필",
+      "keywords": [
+        "맥스",
+        "NGS",
+        "마이크로바이옴",
+        "장내 미생물",
+        "유익균",
+        "Lactobacillus",
+        "Bifido",
+        "Bacteroides",
+        "Prevotella",
+        "Fusobacterium"
+      ],
+      "text": "맥스의 데모 NGS 시각화는 동일 연령대 평균 대비 Bifido 15(기준 25), Lacto 8(기준 30), Bacter 45(기준 40), Prevo 32(기준 20), Fuso 0(기준 5)로 구성되어 있다. 앱 설명은 Lactobacillus 군집이 기준치 이하로 낮고, 이 변화가 피부 알레르기 반응 및 소화/장 민감도와 연결될 수 있다고 제시한다. 따라서 유산균/프리바이오틱스 보강과 알러지 부담이 낮은 단일 단백질 식단을 우선 검토한다.",
+      "metadata": {
+        "bifido": 15,
+        "bifidoBaseline": 25,
+        "lacto": 8,
+        "lactoBaseline": 30,
+        "bacter": 45,
+        "bacterBaseline": 40,
+        "prevotella": 32,
+        "prevotellaBaseline": 20,
+        "fuso": 0,
+        "fusoBaseline": 5
+      }
+    },
+    {
+      "id": "nutrition_barf_kangaroo",
+      "type": "nutrition",
+      "title": "바프독 맞춤 식이 솔루션 - 캥거루 단일 단백질",
+      "keywords": [
+        "식단",
+        "바프독",
+        "BARFDOG",
+        "캥거루",
+        "단일 단백질",
+        "알러지",
+        "닭고기",
+        "소고기",
+        "유익균",
+        "프리바이오틱스",
+        "추천"
+      ],
+      "text": "앱의 식단 솔루션은 맥스의 장내 미생물과 피부 증상 데이터를 함께 고려해 알러지 부담이 낮은 단일 단백질 식단을 우선 추천한다. 현재 추천 상품은 바프독 캥거루 단백질 식단이며, 알러지 케어와 유익균 보강 태그, 98% 매칭 점수가 붙어 있다. 알러지 개선 질문에서는 닭고기와 소고기처럼 반응 가능성이 높은 단백질은 일시적으로 제외하고, 새 단백질원을 소량부터 테스트하며 변 상태와 피부 가려움 변화를 관찰하는 방향을 권한다.",
+      "metadata": {
+        "product": "바프독 캥거루",
+        "match": 98
+      }
+    },
+    {
+      "id": "ngs_dataset_summary",
+      "type": "ngs_summary",
+      "title": "익명화 NGS 샘플 코호트 요약",
+      "keywords": [
+        "NGS",
+        "익명화",
+        "샘플",
+        "코호트",
+        "질환 분포",
+        "피부질환",
+        "장 질환",
+        "비만",
+        "풍부도",
+        "등급",
+        "알러지"
+      ],
+      "text": "GitHub 공개용 RAG 코퍼스는 원본 100마리 데이터에서 36건을 계층 샘플링한 익명화 샘플이다. 반려견 이름, 정확한 생년월일, 알러지원 원문, 자유서술 치료 내용은 제거하고, 분석에 필요한 범주형 정보와 NGS 수치만 남겼다. 샘플 질환군 분포는 {'건강': 15, '장 질환': 13, '피부질환': 6, '비만': 2}, 알러지 응답 분포는 {'있음': 20, '없음': 12, '무응답': 4}, 풍부도 등급 분포는 {'보통': 31, '양호': 3, '주의': 2}이다. 평균 지표는 observed OTUs 63.92, Shannon 3.915, Simpson 0.866, 풍부도 점수 55.54이다.",
+      "metadata": {
+        "anonymized": true,
+        "sampleSize": 36,
+        "diseaseCounts": {
+          "건강": 15,
+          "장 질환": 13,
+          "피부질환": 6,
+          "비만": 2
+        },
+        "allergyCounts": {
+          "있음": 20,
+          "없음": 12,
+          "무응답": 4
+        },
+        "gradeCounts": {
+          "보통": 31,
+          "양호": 3,
+          "주의": 2
+        },
+        "meanMetrics": {
+          "observedOtus": 63.92,
+          "shannon": 3.915,
+          "simpson": 0.866,
+          "richnessScore": 55.54
+        }
+      }
+    },
+    {
+      "id": "ngs_risk_interpretation_rules",
+      "type": "clinical_note",
+      "title": "PHR/NGS 상담 해석 가이드",
+      "keywords": [
+        "해석",
+        "위험도",
+        "피부염",
+        "IBD",
+        "장질환",
+        "비만",
+        "유산균",
+        "Lactobacillus",
+        "Bifidobacterium",
+        "진단",
+        "주의"
+      ],
+      "text": "PHR/NGS 기반 챗봇 응답에서는 확정 진단을 피하고, 증상과 데이터가 함께 가리키는 관리 방향을 설명한다. 피부 가려움, 알러지 이력, Lactobacillus/Bifidobacterium 부족, 묽은 변 또는 설사 기록이 함께 나타나면 피부 장축과 장내 균형 변화를 함께 관리할 필요가 있다고 안내한다. 장 질환/설사/구토/변비 질문에는 수분 섭취, 급여 변화 관찰, 증상 지속 또는 혈변/무기력 동반 시 동물병원 상담을 권한다. 비만/대사 질문에는 체중 변화, 급여량, 활동량, 지방 함량을 함께 확인한다. 모든 답변은 RAG 근거에 있는 수치만 사용하고, 근거 없는 세부 수치를 새로 만들지 않는다.",
+      "metadata": {
+        "disclaimer": "not_diagnosis"
+      }
+    },
+    {
+      "id": "ngs_sample_001",
+      "type": "ngs_record",
+      "title": "ANON-DOG-001 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-001",
+        "건강",
+        "보통",
+        "있음",
+        "미급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "곡물/콩류/씨앗",
+        "없음"
+      ],
+      "text": "ANON-DOG-001 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 미급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 곡물/콩류/씨앗입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 건사료, 배변습관은 실내배변입니다. NGS 지표는 observed OTUs 31.0, Shannon 2.825, Simpson 0.773, 풍부도 점수 41.13입니다. Bacteroidetes 0.46%, Firmicutes 0.54%, 기타 99.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 508.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus 17188.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 8703.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 4043.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__ 1342.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 976.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__Clostridium; s__spiroforme 450.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-001",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "미급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "곡물/콩류/씨앗"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 31.0,
+        "shannon": 2.825,
+        "simpson": 0.773,
+        "richnessScore": 41.13,
+        "bacteroidetes": 0.46,
+        "firmicutes": 0.54,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 508.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus",
+            "value": 17188.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 8703.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 4043.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__",
+            "value": 1342.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 976.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__Clostridium; s__spiroforme",
+            "value": 450.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_002",
+      "type": "ngs_record",
+      "title": "ANON-DOG-002 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-002",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "수산물",
+        "없음"
+      ],
+      "text": "ANON-DOG-002 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 수산물입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실내배변입니다. NGS 지표는 observed OTUs 34.0, Shannon 3.616, Simpson 0.896, 풍부도 점수 44.85입니다. Bacteroidetes 39.84%, Firmicutes 49.73%, 기타 10.43%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 231.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 10020.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 6938.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 6005.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 1485.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Ruminococcaceae; g__Oscillospira; s__ 313.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 250.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-002",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "수산물"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 34.0,
+        "shannon": 3.616,
+        "simpson": 0.896,
+        "richnessScore": 44.85,
+        "bacteroidetes": 39.84,
+        "firmicutes": 49.73,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 231.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 10020.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 6938.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 6005.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 1485.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Ruminococcaceae; g__Oscillospira; s__",
+            "value": 313.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 250.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_003",
+      "type": "ngs_record",
+      "title": "ANON-DOG-003 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-003",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "기타/미분류",
+        "피부 관리 이력"
+      ],
+      "text": "ANON-DOG-003 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 기타/미분류입니다. 치료/관리 이력 카테고리는 피부 관리 이력, 주급여 사료 유형은 건사료, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 40.0, Shannon 3.233, Simpson 0.815, 풍부도 점수 45.72입니다. Bacteroidetes 0.0%, Firmicutes 72.97%, 기타 27.03%. Lactobacillus 계열 합산값 4.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 4826.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 22134.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 11921.0, p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__ 3892.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 1905.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 1789.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Ruminococcaceae; g__Oscillospira; s__ 817.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-003",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "기타/미분류"
+        ],
+        "treatmentCategories": [
+          "피부 관리 이력"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 40.0,
+        "shannon": 3.233,
+        "simpson": 0.815,
+        "richnessScore": 45.72,
+        "bacteroidetes": 0.0,
+        "firmicutes": 72.97,
+        "lactobacillusTotal": 4.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 4826.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 22134.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 11921.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__",
+            "value": 3892.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 1905.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 1789.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Ruminococcaceae; g__Oscillospira; s__",
+            "value": 817.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_004",
+      "type": "ngs_record",
+      "title": "ANON-DOG-004 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-004",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "육류 단백질",
+        "없음"
+      ],
+      "text": "ANON-DOG-004 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질, 육류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 51.0, Shannon 3.32, Simpson 0.843, 풍부도 점수 48.41입니다. Bacteroidetes 0.08%, Firmicutes 0.92%, 기타 99.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 3.0, 주의 균 후보 합산값 79.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 26423.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 19529.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus 12872.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 845.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__ 630.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 621.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-004",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질",
+          "육류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 51.0,
+        "shannon": 3.32,
+        "simpson": 0.843,
+        "richnessScore": 48.41,
+        "bacteroidetes": 0.08,
+        "firmicutes": 0.92,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 3.0,
+        "attentionPathogenTotal": 79.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 26423.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 19529.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus",
+            "value": 12872.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 845.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__",
+            "value": 630.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 621.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_005",
+      "type": "ngs_record",
+      "title": "ANON-DOG-005 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-005",
+        "건강",
+        "보통",
+        "없음",
+        "미급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음"
+      ],
+      "text": "ANON-DOG-005 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 미급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 건사료, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 44.0, Shannon 3.672, Simpson 0.866, 풍부도 점수 48.97입니다. Bacteroidetes 41.55%, Firmicutes 33.7%, 기타 24.75%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 76.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 7815.0, p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 7705.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 2576.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 1711.0, p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 1523.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__ 1477.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-005",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "미급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 44.0,
+        "shannon": 3.672,
+        "simpson": 0.866,
+        "richnessScore": 48.97,
+        "bacteroidetes": 41.55,
+        "firmicutes": 33.7,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 76.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 7815.0
+          },
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 7705.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 2576.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 1711.0
+          },
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 1523.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__",
+            "value": 1477.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_006",
+      "type": "ngs_record",
+      "title": "ANON-DOG-006 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-006",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "곡물/콩류/씨앗",
+        "없음"
+      ],
+      "text": "ANON-DOG-006 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3kg 미만, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질, 곡물/콩류/씨앗입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 53.0, Shannon 3.316, Simpson 0.827, 풍부도 점수 49.46입니다. Bacteroidetes 0.01%, Firmicutes 84.22%, 기타 15.77%. Lactobacillus 계열 합산값 206.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 5896.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 32706.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 21229.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 13922.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Veillonella; s__ 6961.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium; s__perfringens 5473.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 2335.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-006",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3kg 미만",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질",
+          "곡물/콩류/씨앗"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 53.0,
+        "shannon": 3.316,
+        "simpson": 0.827,
+        "richnessScore": 49.46,
+        "bacteroidetes": 0.01,
+        "firmicutes": 84.22,
+        "lactobacillusTotal": 206.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 5896.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 32706.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 21229.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 13922.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Veillonella; s__",
+            "value": 6961.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium; s__perfringens",
+            "value": 5473.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 2335.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_007",
+      "type": "ngs_record",
+      "title": "ANON-DOG-007 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-007",
+        "건강",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "항생제/약물 이력"
+      ],
+      "text": "ANON-DOG-007 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 항생제/약물 이력, 주급여 사료 유형은 건사료, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 59.0, Shannon 3.04, Simpson 0.75, 풍부도 점수 51.14입니다. Bacteroidetes 15.14%, Firmicutes 71.67%, 기타 13.19%. Lactobacillus 계열 합산값 1165.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 36.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 46960.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 12712.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 8731.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 2271.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae 1165.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 524.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-007",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "항생제/약물 이력"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 59.0,
+        "shannon": 3.04,
+        "simpson": 0.75,
+        "richnessScore": 51.14,
+        "bacteroidetes": 15.14,
+        "firmicutes": 71.67,
+        "lactobacillusTotal": 1165.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 36.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 46960.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 12712.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 8731.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 2271.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae",
+            "value": 1165.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 524.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_008",
+      "type": "ngs_record",
+      "title": "ANON-DOG-008 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-008",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "없음"
+      ],
+      "text": "ANON-DOG-008 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 5-10kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 55.0, Shannon 3.757, Simpson 0.885, 풍부도 점수 51.96입니다. Bacteroidetes 0.0%, Firmicutes 1.0%, 기타 99.0%. Lactobacillus 계열 합산값 19676.0, Bifidobacterium 계열 합산값 16.0, 주의 균 후보 합산값 1929.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__ruminis 19671.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus 19061.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 16643.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 9220.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium; s__neonatale 1746.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 316.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-008",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "5-10kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 55.0,
+        "shannon": 3.757,
+        "simpson": 0.885,
+        "richnessScore": 51.96,
+        "bacteroidetes": 0.0,
+        "firmicutes": 1.0,
+        "lactobacillusTotal": 19676.0,
+        "bifidobacteriumTotal": 16.0,
+        "attentionPathogenTotal": 1929.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__ruminis",
+            "value": 19671.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus",
+            "value": 19061.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 16643.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 9220.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium; s__neonatale",
+            "value": 1746.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 316.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_009",
+      "type": "ngs_record",
+      "title": "ANON-DOG-009 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-009",
+        "건강",
+        "보통",
+        "무응답",
+        "미급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음"
+      ],
+      "text": "ANON-DOG-009 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3kg 미만, 성별은 암컷입니다. 유산균 급여는 미급여, 알러지 보유 여부는 무응답, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 56.0, Shannon 4.18, Simpson 0.916, 풍부도 점수 54.94입니다. Bacteroidetes 35.44%, Firmicutes 38.16%, 기타 26.4%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 5243.0. 주요 검출 균/분류군은 p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Bacteroides; s__caccae 12361.0, p__Proteobacteria 12006.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Clostridium 5188.0, p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Porphyromonadaceae; g__Parabacteroides; s__ 3961.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__; s__ 3337.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__Allobaculum; s__ 1938.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-009",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3kg 미만",
+        "sex": "암컷",
+        "probiotic": "미급여",
+        "allergyStatus": "무응답",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 56.0,
+        "shannon": 4.18,
+        "simpson": 0.916,
+        "richnessScore": 54.94,
+        "bacteroidetes": 35.44,
+        "firmicutes": 38.16,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 5243.0,
+        "topTaxa": [
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Bacteroides; s__caccae",
+            "value": 12361.0
+          },
+          {
+            "name": "p__Proteobacteria",
+            "value": 12006.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Clostridium",
+            "value": 5188.0
+          },
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Porphyromonadaceae; g__Parabacteroides; s__",
+            "value": 3961.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__; s__",
+            "value": 3337.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__Allobaculum; s__",
+            "value": 1938.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_010",
+      "type": "ngs_record",
+      "title": "ANON-DOG-010 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-010",
+        "건강",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음"
+      ],
+      "text": "ANON-DOG-010 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 59.0, Shannon 4.552, Simpson 0.935, 풍부도 점수 58.42입니다. Bacteroidetes 43.77%, Firmicutes 43.58%, 기타 12.65%. Lactobacillus 계열 합산값 53.0, Bifidobacterium 계열 합산값 125.0, 주의 균 후보 합산값 4.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 4744.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 4725.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 1978.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 1601.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 719.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus 654.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-010",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 59.0,
+        "shannon": 4.552,
+        "simpson": 0.935,
+        "richnessScore": 58.42,
+        "bacteroidetes": 43.77,
+        "firmicutes": 43.58,
+        "lactobacillusTotal": 53.0,
+        "bifidobacteriumTotal": 125.0,
+        "attentionPathogenTotal": 4.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 4744.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 4725.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 1978.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 1601.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 719.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus",
+            "value": 654.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_011",
+      "type": "ngs_record",
+      "title": "ANON-DOG-011 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-011",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "육류 단백질",
+        "없음"
+      ],
+      "text": "ANON-DOG-011 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 육류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 62.0, Shannon 4.836, Simpson 0.949, 풍부도 점수 61.24입니다. Bacteroidetes 36.11%, Firmicutes 35.89%, 기타 28.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 32.0, 주의 균 후보 합산값 0.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 14164.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 9593.0, p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__[Paraprevotellaceae]; g__[Prevotella]; s__ 8801.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 2192.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 2075.0, p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae; g__Anaerobiospirillum; s__ 1704.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-011",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "육류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 62.0,
+        "shannon": 4.836,
+        "simpson": 0.949,
+        "richnessScore": 61.24,
+        "bacteroidetes": 36.11,
+        "firmicutes": 35.89,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 32.0,
+        "attentionPathogenTotal": 0.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 14164.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 9593.0
+          },
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__[Paraprevotellaceae]; g__[Prevotella]; s__",
+            "value": 8801.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 2192.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 2075.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae; g__Anaerobiospirillum; s__",
+            "value": 1704.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_012",
+      "type": "ngs_record",
+      "title": "ANON-DOG-012 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-012",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "육류 단백질",
+        "없음"
+      ],
+      "text": "ANON-DOG-012 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 육류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 77.0, Shannon 4.58, Simpson 0.937, 풍부도 점수 63.27입니다. Bacteroidetes 34.84%, Firmicutes 56.17%, 기타 9.0%. Lactobacillus 계열 합산값 153.0, Bifidobacterium 계열 합산값 22.0, 주의 균 후보 합산값 521.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Leuconostocaceae; g__Weissella 8681.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 5189.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 3807.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 2671.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 1337.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 1286.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-012",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "육류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 77.0,
+        "shannon": 4.58,
+        "simpson": 0.937,
+        "richnessScore": 63.27,
+        "bacteroidetes": 34.84,
+        "firmicutes": 56.17,
+        "lactobacillusTotal": 153.0,
+        "bifidobacteriumTotal": 22.0,
+        "attentionPathogenTotal": 521.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Leuconostocaceae; g__Weissella",
+            "value": 8681.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 5189.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 3807.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 2671.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 1337.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 1286.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_013",
+      "type": "ngs_record",
+      "title": "ANON-DOG-013 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-013",
+        "건강",
+        "보통",
+        "무응답",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음"
+      ],
+      "text": "ANON-DOG-013 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 무응답, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 84.0, Shannon 4.555, Simpson 0.929, 풍부도 점수 65.16입니다. Bacteroidetes 0.58%, Firmicutes 0.42%, 기타 99.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 613.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 8404.0, p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 8177.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus 3375.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 1789.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 1667.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Phascolarctobacterium; s__ 1554.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-013",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "무응답",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 84.0,
+        "shannon": 4.555,
+        "simpson": 0.929,
+        "richnessScore": 65.16,
+        "bacteroidetes": 0.58,
+        "firmicutes": 0.42,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 613.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 8404.0
+          },
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 8177.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus",
+            "value": 3375.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 1789.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 1667.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Phascolarctobacterium; s__",
+            "value": 1554.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_014",
+      "type": "ngs_record",
+      "title": "ANON-DOG-014 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-014",
+        "건강",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "육류 단백질",
+        "기타 관리 이력"
+      ],
+      "text": "ANON-DOG-014 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 육류 단백질입니다. 치료/관리 이력 카테고리는 기타 관리 이력, 주급여 사료 유형은 생식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 80.0, Shannon 4.894, Simpson 0.947, 풍부도 점수 66.53입니다. Bacteroidetes 0.42%, Firmicutes 0.58%, 기타 99.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 739.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 5708.0, p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 5694.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 3604.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 2284.0, p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae 2131.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Phascolarctobacterium; s__ 1519.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-014",
+        "diseaseGroup": "건강",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "육류 단백질"
+        ],
+        "treatmentCategories": [
+          "기타 관리 이력"
+        ],
+        "foodType": "생식",
+        "observedOtus": 80.0,
+        "shannon": 4.894,
+        "simpson": 0.947,
+        "richnessScore": 66.53,
+        "bacteroidetes": 0.42,
+        "firmicutes": 0.58,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 739.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 5708.0
+          },
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 5694.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 3604.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 2284.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae",
+            "value": 2131.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Phascolarctobacterium; s__",
+            "value": 1519.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_015",
+      "type": "ngs_record",
+      "title": "ANON-DOG-015 익명 NGS 샘플 - 건강",
+      "keywords": [
+        "ANON-DOG-015",
+        "건강",
+        "양호",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "육류 단백질",
+        "채소/과일",
+        "없음"
+      ],
+      "text": "ANON-DOG-015 익명 PHR/NGS 샘플입니다. 질환군은 건강, 풍부도 등급은 양호, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질, 육류 단백질, 채소/과일입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 113.0, Shannon 5.325, Simpson 0.953, 풍부도 점수 78.79입니다. Bacteroidetes 35.43%, Firmicutes 62.13%, 기타 2.45%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 255.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 5415.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 4112.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 1953.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 1899.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__; s__ 1559.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Lachnospira; s__ 1467.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-015",
+        "diseaseGroup": "건강",
+        "richnessGrade": "양호",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질",
+          "육류 단백질",
+          "채소/과일"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 113.0,
+        "shannon": 5.325,
+        "simpson": 0.953,
+        "richnessScore": 78.79,
+        "bacteroidetes": 35.43,
+        "firmicutes": 62.13,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 255.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 5415.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 4112.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 1953.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 1899.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__; s__",
+            "value": 1559.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Lachnospira; s__",
+            "value": 1467.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_016",
+      "type": "ngs_record",
+      "title": "ANON-DOG-016 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-016",
+        "장 질환",
+        "주의",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-016 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 주의, 나이대는 성견기(3-7세), 체중대는 10kg 이상, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 건사료, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 45.0, Shannon 1.909, Simpson 0.498, 풍부도 점수 39.09입니다. Bacteroidetes 0.04%, Firmicutes 99.42%, 기타 0.53%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 7680.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 69045.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 11010.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium; s__perfringens 7495.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__ 4803.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 324.0, p__Actinobacteria; c__Coriobacteriia; o__Coriobacteriales; f__Coriobacteriaceae; g__Eggerthella; s__lenta 163.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-016",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "주의",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "10kg 이상",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 45.0,
+        "shannon": 1.909,
+        "simpson": 0.498,
+        "richnessScore": 39.09,
+        "bacteroidetes": 0.04,
+        "firmicutes": 99.42,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 7680.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 69045.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 11010.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Clostridium; s__perfringens",
+            "value": 7495.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__",
+            "value": 4803.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 324.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Coriobacteriia; o__Coriobacteriales; f__Coriobacteriaceae; g__Eggerthella; s__lenta",
+            "value": 163.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_017",
+      "type": "ngs_record",
+      "title": "ANON-DOG-017 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-017",
+        "장 질환",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "육류 단백질",
+        "곡물/콩류/씨앗",
+        "채소/과일",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-017 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질, 육류 단백질, 곡물/콩류/씨앗, 채소/과일입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실내배변입니다. NGS 지표는 observed OTUs 42.0, Shannon 3.388, Simpson 0.871, 풍부도 점수 45.74입니다. Bacteroidetes 25.54%, Firmicutes 46.98%, 기타 27.47%. Lactobacillus 계열 합산값 12.0, Bifidobacterium 계열 합산값 260.0, 주의 균 후보 합산값 8.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 11485.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 9401.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 6311.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 1194.0, p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae; g__Anaerobiospirillum; s__ 348.0, p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__ 260.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-017",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질",
+          "육류 단백질",
+          "곡물/콩류/씨앗",
+          "채소/과일"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 42.0,
+        "shannon": 3.388,
+        "simpson": 0.871,
+        "richnessScore": 45.74,
+        "bacteroidetes": 25.54,
+        "firmicutes": 46.98,
+        "lactobacillusTotal": 12.0,
+        "bifidobacteriumTotal": 260.0,
+        "attentionPathogenTotal": 8.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 11485.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 9401.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 6311.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 1194.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae; g__Anaerobiospirillum; s__",
+            "value": 348.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__",
+            "value": 260.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_018",
+      "type": "ngs_record",
+      "title": "ANON-DOG-018 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-018",
+        "장 질환",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-018 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 건사료, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 45.0, Shannon 3.355, Simpson 0.827, 풍부도 점수 47.71입니다. Bacteroidetes 0.0%, Firmicutes 96.52%, 기타 3.48%. Lactobacillus 계열 합산값 1183.0, Bifidobacterium 계열 합산값 802.0, 주의 균 후보 합산값 434.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 44007.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 13406.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae 1183.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Leuconostocaceae; g__Leuconostoc; s__ 906.0, p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__animalis 786.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 483.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-018",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 45.0,
+        "shannon": 3.355,
+        "simpson": 0.827,
+        "richnessScore": 47.71,
+        "bacteroidetes": 0.0,
+        "firmicutes": 96.52,
+        "lactobacillusTotal": 1183.0,
+        "bifidobacteriumTotal": 802.0,
+        "attentionPathogenTotal": 434.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 44007.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 13406.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae",
+            "value": 1183.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Leuconostocaceae; g__Leuconostoc; s__",
+            "value": 906.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__animalis",
+            "value": 786.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 483.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_019",
+      "type": "ngs_record",
+      "title": "ANON-DOG-019 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-019",
+        "장 질환",
+        "보통",
+        "무응답",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-019 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 무응답, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 55.0, Shannon 3.144, Simpson 0.812, 풍부도 점수 48.94입니다. Bacteroidetes 0.0%, Firmicutes 1.0%, 기타 99.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 58.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 32162.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus 22273.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 20011.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 3440.0, p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae; g__Anaerobiospirillum; s__ 1459.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 747.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-019",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "무응답",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 55.0,
+        "shannon": 3.144,
+        "simpson": 0.812,
+        "richnessScore": 48.94,
+        "bacteroidetes": 0.0,
+        "firmicutes": 1.0,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 58.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 32162.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus",
+            "value": 22273.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 20011.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 3440.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Succinivibrionaceae; g__Anaerobiospirillum; s__",
+            "value": 1459.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 747.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_020",
+      "type": "ngs_record",
+      "title": "ANON-DOG-020 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-020",
+        "장 질환",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-020 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 건사료, 배변습관은 실내배변입니다. NGS 지표는 observed OTUs 52.0, Shannon 3.834, Simpson 0.885, 풍부도 점수 51.86입니다. Bacteroidetes 0.97%, Firmicutes 90.76%, 기타 8.26%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 1042.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 13355.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 7257.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 6875.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 3452.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 2226.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 1668.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-020",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 52.0,
+        "shannon": 3.834,
+        "simpson": 0.885,
+        "richnessScore": 51.86,
+        "bacteroidetes": 0.97,
+        "firmicutes": 90.76,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 1042.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 13355.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 7257.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 6875.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 3452.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 2226.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 1668.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_021",
+      "type": "ngs_record",
+      "title": "ANON-DOG-021 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-021",
+        "장 질환",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-021 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 54.0, Shannon 3.729, Simpson 0.857, 풍부도 점수 52.39입니다. Bacteroidetes 31.1%, Firmicutes 33.11%, 기타 35.79%. Lactobacillus 계열 합산값 3.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 1157.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 32484.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 4554.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 3497.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 2906.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 2034.0, p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__ 1134.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-021",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 54.0,
+        "shannon": 3.729,
+        "simpson": 0.857,
+        "richnessScore": 52.39,
+        "bacteroidetes": 31.1,
+        "firmicutes": 33.11,
+        "lactobacillusTotal": 3.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 1157.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 32484.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 4554.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 3497.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 2906.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 2034.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__",
+            "value": 1134.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_022",
+      "type": "ngs_record",
+      "title": "ANON-DOG-022 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-022",
+        "장 질환",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "기타 관리 이력",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-022 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 기타 관리 이력, 주급여 사료 유형은 건사료, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 54.0, Shannon 3.966, Simpson 0.903, 풍부도 점수 52.96입니다. Bacteroidetes 32.89%, Firmicutes 53.76%, 기타 13.35%. Lactobacillus 계열 합산값 721.0, Bifidobacterium 계열 합산값 2802.0, 주의 균 후보 합산값 1572.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 6203.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 3707.0, p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__animalis 2612.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 2278.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__Clostridium; s__spiroforme 884.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae 721.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-022",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "기타 관리 이력"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 54.0,
+        "shannon": 3.966,
+        "simpson": 0.903,
+        "richnessScore": 52.96,
+        "bacteroidetes": 32.89,
+        "firmicutes": 53.76,
+        "lactobacillusTotal": 721.0,
+        "bifidobacteriumTotal": 2802.0,
+        "attentionPathogenTotal": 1572.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 6203.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 3707.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__animalis",
+            "value": 2612.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 2278.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__Clostridium; s__spiroforme",
+            "value": 884.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae",
+            "value": 721.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_023",
+      "type": "ngs_record",
+      "title": "ANON-DOG-023 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-023",
+        "장 질환",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "소화기 관리 이력",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-023 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 소화기 관리 이력, 주급여 사료 유형은 생식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 50.0, Shannon 4.314, Simpson 0.923, 풍부도 점수 54.33입니다. Bacteroidetes 42.09%, Firmicutes 30.21%, 기타 27.7%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 0.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 9528.0, p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__[Paraprevotellaceae]; g__[Prevotella]; s__ 5839.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 2131.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 2100.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 1245.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 895.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-023",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "소화기 관리 이력"
+        ],
+        "foodType": "생식",
+        "observedOtus": 50.0,
+        "shannon": 4.314,
+        "simpson": 0.923,
+        "richnessScore": 54.33,
+        "bacteroidetes": 42.09,
+        "firmicutes": 30.21,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 0.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 9528.0
+          },
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__[Paraprevotellaceae]; g__[Prevotella]; s__",
+            "value": 5839.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 2131.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 2100.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 1245.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 895.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_024",
+      "type": "ngs_record",
+      "title": "ANON-DOG-024 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-024",
+        "장 질환",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-024 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 61.0, Shannon 4.13, Simpson 0.908, 풍부도 점수 56.06입니다. Bacteroidetes 41.5%, Firmicutes 28.69%, 기타 29.81%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 14.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 27527.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 3725.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 2643.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Lachnospira; s__ 686.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 673.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 340.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-024",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 61.0,
+        "shannon": 4.13,
+        "simpson": 0.908,
+        "richnessScore": 56.06,
+        "bacteroidetes": 41.5,
+        "firmicutes": 28.69,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 14.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 27527.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 3725.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 2643.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Lachnospira; s__",
+            "value": 686.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 673.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 340.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_025",
+      "type": "ngs_record",
+      "title": "ANON-DOG-025 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-025",
+        "장 질환",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "육류 단백질",
+        "곡물/콩류/씨앗",
+        "채소/과일",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-025 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질, 육류 단백질, 곡물/콩류/씨앗, 채소/과일입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실내배변입니다. NGS 지표는 observed OTUs 67.0, Shannon 4.371, Simpson 0.915, 풍부도 점수 59.53입니다. Bacteroidetes 31.48%, Firmicutes 47.01%, 기타 21.5%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 108.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 11777.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 5870.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 2635.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 2562.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 1102.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Ruminococcaceae; g__Butyricicoccus; s__pullicaecorum 1023.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-025",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질",
+          "육류 단백질",
+          "곡물/콩류/씨앗",
+          "채소/과일"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 67.0,
+        "shannon": 4.371,
+        "simpson": 0.915,
+        "richnessScore": 59.53,
+        "bacteroidetes": 31.48,
+        "firmicutes": 47.01,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 108.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 11777.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 5870.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 2635.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 2562.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 1102.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Ruminococcaceae; g__Butyricicoccus; s__pullicaecorum",
+            "value": 1023.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_026",
+      "type": "ngs_record",
+      "title": "ANON-DOG-026 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-026",
+        "장 질환",
+        "보통",
+        "무응답",
+        "미급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "피부 관리 이력",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-026 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 3kg 미만, 성별은 암컷입니다. 유산균 급여는 미급여, 알러지 보유 여부는 무응답, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 피부 관리 이력, 주급여 사료 유형은 건사료, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 79.0, Shannon 4.316, Simpson 0.892, 풍부도 점수 62.97입니다. Bacteroidetes 0.31%, Firmicutes 0.69%, 기타 99.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 2953.0, 주의 균 후보 합산값 247.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus 10772.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__ 3546.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 2162.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 1749.0, p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__longum 1661.0, p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__ 1292.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-026",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3kg 미만",
+        "sex": "암컷",
+        "probiotic": "미급여",
+        "allergyStatus": "무응답",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "피부 관리 이력"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 79.0,
+        "shannon": 4.316,
+        "simpson": 0.892,
+        "richnessScore": 62.97,
+        "bacteroidetes": 0.31,
+        "firmicutes": 0.69,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 2953.0,
+        "attentionPathogenTotal": 247.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus",
+            "value": 10772.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__",
+            "value": 3546.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 2162.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 1749.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__longum",
+            "value": 1661.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__",
+            "value": 1292.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_027",
+      "type": "ngs_record",
+      "title": "ANON-DOG-027 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-027",
+        "장 질환",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "피부 관리 이력",
+        "소화기 관리 이력",
+        "안과 관리 이력",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-027 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질입니다. 치료/관리 이력 카테고리는 피부 관리 이력, 소화기 관리 이력, 안과 관리 이력, 주급여 사료 유형은 건사료, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 85.0, Shannon 5.2, Simpson 0.962, 풍부도 점수 70.06입니다. Bacteroidetes 34.94%, Firmicutes 25.7%, 기타 39.36%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 3608.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 13984.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 4825.0, p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 3726.0, p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__ 3601.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 2371.0, p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Prevotellaceae; g__Prevotella; s__copri 1935.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-027",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질"
+        ],
+        "treatmentCategories": [
+          "피부 관리 이력",
+          "소화기 관리 이력",
+          "안과 관리 이력"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 85.0,
+        "shannon": 5.2,
+        "simpson": 0.962,
+        "richnessScore": 70.06,
+        "bacteroidetes": 34.94,
+        "firmicutes": 25.7,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 3608.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 13984.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 4825.0
+          },
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 3726.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__",
+            "value": 3601.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 2371.0
+          },
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Prevotellaceae; g__Prevotella; s__copri",
+            "value": 1935.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_028",
+      "type": "ngs_record",
+      "title": "ANON-DOG-028 익명 NGS 샘플 - 장 질환",
+      "keywords": [
+        "ANON-DOG-028",
+        "장 질환",
+        "양호",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "기타/미분류",
+        "없음",
+        "장질환",
+        "설사",
+        "구토",
+        "변비",
+        "소화",
+        "묽은 변"
+      ],
+      "text": "ANON-DOG-028 익명 PHR/NGS 샘플입니다. 질환군은 장 질환, 풍부도 등급은 양호, 나이대는 성견기(3-7세), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 기타/미분류입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 화식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 207.0, Shannon 5.165, Simpson 0.924, 풍부도 점수 85.55입니다. Bacteroidetes 0.5%, Firmicutes 0.5%, 기타 99.0%. Lactobacillus 계열 합산값 25.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 672.0. 주요 검출 균/분류군은 p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 16967.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 10890.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 9486.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__ 3065.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 2484.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus 1619.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-028",
+        "diseaseGroup": "장 질환",
+        "richnessGrade": "양호",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "기타/미분류"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "화식",
+        "observedOtus": 207.0,
+        "shannon": 5.165,
+        "simpson": 0.924,
+        "richnessScore": 85.55,
+        "bacteroidetes": 0.5,
+        "firmicutes": 0.5,
+        "lactobacillusTotal": 25.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 672.0,
+        "topTaxa": [
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 16967.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 10890.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 9486.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__",
+            "value": 3065.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 2484.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Ruminococcus; s__gnavus",
+            "value": 1619.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_029",
+      "type": "ngs_record",
+      "title": "ANON-DOG-029 익명 NGS 샘플 - 피부질환",
+      "keywords": [
+        "ANON-DOG-029",
+        "피부질환",
+        "주의",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "곡물/콩류/씨앗",
+        "채소/과일",
+        "피부 관리 이력",
+        "소화기 관리 이력",
+        "항생제/약물 이력",
+        "피부",
+        "피부염",
+        "알러지",
+        "알레르기",
+        "가려움"
+      ],
+      "text": "ANON-DOG-029 익명 PHR/NGS 샘플입니다. 질환군은 피부질환, 풍부도 등급은 주의, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 곡물/콩류/씨앗, 채소/과일입니다. 치료/관리 이력 카테고리는 피부 관리 이력, 소화기 관리 이력, 항생제/약물 이력, 주급여 사료 유형은 화식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 27.0, Shannon 1.918, Simpson 0.575, 풍부도 점수 34.47입니다. Bacteroidetes 0.01%, Firmicutes 15.86%, 기타 84.13%. Lactobacillus 계열 합산값 1520.0, Bifidobacterium 계열 합산값 236.0, 주의 균 후보 합산값 0.0. 주요 검출 균/분류군은 p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 63005.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__brevis 971.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Pediococcus; s__ 783.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae 547.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 481.0, p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__longum 178.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-029",
+        "diseaseGroup": "피부질환",
+        "richnessGrade": "주의",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "곡물/콩류/씨앗",
+          "채소/과일"
+        ],
+        "treatmentCategories": [
+          "피부 관리 이력",
+          "소화기 관리 이력",
+          "항생제/약물 이력"
+        ],
+        "foodType": "화식",
+        "observedOtus": 27.0,
+        "shannon": 1.918,
+        "simpson": 0.575,
+        "richnessScore": 34.47,
+        "bacteroidetes": 0.01,
+        "firmicutes": 15.86,
+        "lactobacillusTotal": 1520.0,
+        "bifidobacteriumTotal": 236.0,
+        "attentionPathogenTotal": 0.0,
+        "topTaxa": [
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 63005.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__brevis",
+            "value": 971.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Pediococcus; s__",
+            "value": 783.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Lactobacillaceae; g__Lactobacillus; s__zeae",
+            "value": 547.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 481.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__longum",
+            "value": 178.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_030",
+      "type": "ngs_record",
+      "title": "ANON-DOG-030 익명 NGS 샘플 - 피부질환",
+      "keywords": [
+        "ANON-DOG-030",
+        "피부질환",
+        "보통",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "기타 관리 이력",
+        "피부",
+        "피부염",
+        "알러지",
+        "알레르기",
+        "가려움"
+      ],
+      "text": "ANON-DOG-030 익명 PHR/NGS 샘플입니다. 질환군은 피부질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 기타 관리 이력, 주급여 사료 유형은 생식, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 40.0, Shannon 3.078, Simpson 0.822, 풍부도 점수 44.11입니다. Bacteroidetes 0.63%, Firmicutes 0.2%, 기타 99.17%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 6413.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 13143.0, p__Campylobacterota; c__Campylobacteria; o__Campylobacterales; f__Helicobacteraceae; __; __ 2822.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacterales_A_737866; f__Enterobacteriaceae_A; g__Escherichia_710834; __ 2502.0, p__Firmicutes_A; c__Clostridia_258483; o__Lachnospirales; f__Lachnospiraceae; __; __ 2081.0, p__Fusobacteriota; c__Fusobacteriia; o__Fusobacteriales_993521; f__Fusobacteriaceae_993521; g__Fusobacterium_A; s__Fusobacterium_A mortiferum 1577.0, p__Firmicutes_A; c__Clostridia_258483; o__Lachnospirales; f__Cellulosilyticaceae; g__; s__ 1077.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-030",
+        "diseaseGroup": "피부질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "기타 관리 이력"
+        ],
+        "foodType": "생식",
+        "observedOtus": 40.0,
+        "shannon": 3.078,
+        "simpson": 0.822,
+        "richnessScore": 44.11,
+        "bacteroidetes": 0.63,
+        "firmicutes": 0.2,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 6413.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 13143.0
+          },
+          {
+            "name": "p__Campylobacterota; c__Campylobacteria; o__Campylobacterales; f__Helicobacteraceae; __; __",
+            "value": 2822.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacterales_A_737866; f__Enterobacteriaceae_A; g__Escherichia_710834; __",
+            "value": 2502.0
+          },
+          {
+            "name": "p__Firmicutes_A; c__Clostridia_258483; o__Lachnospirales; f__Lachnospiraceae; __; __",
+            "value": 2081.0
+          },
+          {
+            "name": "p__Fusobacteriota; c__Fusobacteriia; o__Fusobacteriales_993521; f__Fusobacteriaceae_993521; g__Fusobacterium_A; s__Fusobacterium_A mortiferum",
+            "value": 1577.0
+          },
+          {
+            "name": "p__Firmicutes_A; c__Clostridia_258483; o__Lachnospirales; f__Cellulosilyticaceae; g__; s__",
+            "value": 1077.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_031",
+      "type": "ngs_record",
+      "title": "ANON-DOG-031 익명 NGS 샘플 - 피부질환",
+      "keywords": [
+        "ANON-DOG-031",
+        "피부질환",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "육류 단백질",
+        "수산물",
+        "유제품",
+        "곡물/콩류/씨앗",
+        "채소/과일",
+        "피부 관리 이력",
+        "피부",
+        "피부염",
+        "알러지",
+        "알레르기",
+        "가려움"
+      ],
+      "text": "ANON-DOG-031 익명 PHR/NGS 샘플입니다. 질환군은 피부질환, 풍부도 등급은 보통, 나이대는 시니어(8세 이상), 체중대는 3-5kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질, 육류 단백질, 수산물, 유제품, 곡물/콩류/씨앗, 채소/과일입니다. 치료/관리 이력 카테고리는 피부 관리 이력, 주급여 사료 유형은 화식, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 50.0, Shannon 3.588, Simpson 0.846, 풍부도 점수 50.44입니다. Bacteroidetes 54.61%, Firmicutes 41.39%, 기타 4.0%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 3.0, 주의 균 후보 합산값 10.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 6811.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 6040.0, p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Porphyromonadaceae; g__Parabacteroides; s__ 5273.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 3779.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 1502.0, p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Bacteroides; s__caccae 1316.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-031",
+        "diseaseGroup": "피부질환",
+        "richnessGrade": "보통",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3-5kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질",
+          "육류 단백질",
+          "수산물",
+          "유제품",
+          "곡물/콩류/씨앗",
+          "채소/과일"
+        ],
+        "treatmentCategories": [
+          "피부 관리 이력"
+        ],
+        "foodType": "화식",
+        "observedOtus": 50.0,
+        "shannon": 3.588,
+        "simpson": 0.846,
+        "richnessScore": 50.44,
+        "bacteroidetes": 54.61,
+        "firmicutes": 41.39,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 3.0,
+        "attentionPathogenTotal": 10.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 6811.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 6040.0
+          },
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Porphyromonadaceae; g__Parabacteroides; s__",
+            "value": 5273.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 3779.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 1502.0
+          },
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Bacteroidaceae; g__Bacteroides; s__caccae",
+            "value": 1316.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_032",
+      "type": "ngs_record",
+      "title": "ANON-DOG-032 익명 NGS 샘플 - 피부질환",
+      "keywords": [
+        "ANON-DOG-032",
+        "피부질환",
+        "보통",
+        "있음",
+        "미급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "기타/미분류",
+        "기타 관리 이력",
+        "피부",
+        "피부염",
+        "알러지",
+        "알레르기",
+        "가려움"
+      ],
+      "text": "ANON-DOG-032 익명 PHR/NGS 샘플입니다. 질환군은 피부질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 암컷입니다. 유산균 급여는 미급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 기타/미분류입니다. 치료/관리 이력 카테고리는 기타 관리 이력, 주급여 사료 유형은 건사료, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 65.0, Shannon 3.806, Simpson 0.89, 풍부도 점수 54.85입니다. Bacteroidetes 54.02%, Firmicutes 12.0%, 기타 33.98%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 0.0, 주의 균 후보 합산값 259.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 29289.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales 9553.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 3680.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 1680.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 705.0, p__Actinobacteria; c__Coriobacteriia; o__Coriobacteriales; f__Coriobacteriaceae; g__Collinsella; s__ 431.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-032",
+        "diseaseGroup": "피부질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "암컷",
+        "probiotic": "미급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "기타/미분류"
+        ],
+        "treatmentCategories": [
+          "기타 관리 이력"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 65.0,
+        "shannon": 3.806,
+        "simpson": 0.89,
+        "richnessScore": 54.85,
+        "bacteroidetes": 54.02,
+        "firmicutes": 12.0,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 0.0,
+        "attentionPathogenTotal": 259.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 29289.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales",
+            "value": 9553.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 3680.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 1680.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 705.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Coriobacteriia; o__Coriobacteriales; f__Coriobacteriaceae; g__Collinsella; s__",
+            "value": 431.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_033",
+      "type": "ngs_record",
+      "title": "ANON-DOG-033 익명 NGS 샘플 - 피부질환",
+      "keywords": [
+        "ANON-DOG-033",
+        "피부질환",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "없음",
+        "피부",
+        "피부염",
+        "알러지",
+        "알레르기",
+        "가려움"
+      ],
+      "text": "ANON-DOG-033 익명 PHR/NGS 샘플입니다. 질환군은 피부질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실내배변입니다. NGS 지표는 observed OTUs 70.0, Shannon 4.455, Simpson 0.931, 풍부도 점수 60.55입니다. Bacteroidetes 37.03%, Firmicutes 46.51%, 기타 16.46%. Lactobacillus 계열 합산값 555.0, Bifidobacterium 계열 합산값 43.0, 주의 균 후보 합산값 0.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 15936.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 4597.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 3291.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 2539.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 1978.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Lactococcus; s__garvieae 971.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-033",
+        "diseaseGroup": "피부질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 70.0,
+        "shannon": 4.455,
+        "simpson": 0.931,
+        "richnessScore": 60.55,
+        "bacteroidetes": 37.03,
+        "firmicutes": 46.51,
+        "lactobacillusTotal": 555.0,
+        "bifidobacteriumTotal": 43.0,
+        "attentionPathogenTotal": 0.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 15936.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 4597.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 3291.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 2539.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 1978.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Lactococcus; s__garvieae",
+            "value": 971.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_034",
+      "type": "ngs_record",
+      "title": "ANON-DOG-034 익명 NGS 샘플 - 피부질환",
+      "keywords": [
+        "ANON-DOG-034",
+        "피부질환",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "없음",
+        "피부",
+        "피부염",
+        "알러지",
+        "알레르기",
+        "가려움"
+      ],
+      "text": "ANON-DOG-034 익명 PHR/NGS 샘플입니다. 질환군은 피부질환, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 수컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 건사료, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 90.0, Shannon 4.776, Simpson 0.937, 풍부도 점수 68.44입니다. Bacteroidetes 25.59%, Firmicutes 55.05%, 기타 19.36%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 27.0, 주의 균 후보 합산값 1252.0. 주요 검출 균/분류군은 p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 10778.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae 6416.0, p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 6100.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 4019.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 2445.0, p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__ 1083.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-034",
+        "diseaseGroup": "피부질환",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "수컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 90.0,
+        "shannon": 4.776,
+        "simpson": 0.937,
+        "richnessScore": 68.44,
+        "bacteroidetes": 25.59,
+        "firmicutes": 55.05,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 27.0,
+        "attentionPathogenTotal": 1252.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 10778.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae",
+            "value": 6416.0
+          },
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 6100.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 4019.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 2445.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Epsilonproteobacteria; o__Campylobacterales; f__Campylobacteraceae; g__Campylobacter; s__",
+            "value": 1083.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_035",
+      "type": "ngs_record",
+      "title": "ANON-DOG-035 익명 NGS 샘플 - 비만",
+      "keywords": [
+        "ANON-DOG-035",
+        "비만",
+        "보통",
+        "있음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "가금류 단백질",
+        "없음",
+        "비만",
+        "체중",
+        "대사"
+      ],
+      "text": "ANON-DOG-035 익명 PHR/NGS 샘플입니다. 질환군은 비만, 풍부도 등급은 보통, 나이대는 성견기(3-7세), 체중대는 5-10kg, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 있음, 알러지원 카테고리는 가금류 단백질입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 건사료, 배변습관은 실내배변, 실외배변입니다. NGS 지표는 observed OTUs 40.0, Shannon 3.217, Simpson 0.815, 풍부도 점수 45.59입니다. Bacteroidetes 0.03%, Firmicutes 92.08%, 기타 7.9%. Lactobacillus 계열 합산값 0.0, Bifidobacterium 계열 합산값 66.0, 주의 균 후보 합산값 1463.0. 주요 검출 균/분류군은 p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus 26229.0, p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae 17988.0, p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae 3068.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae 2323.0, p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum 1717.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__ 1633.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-035",
+        "diseaseGroup": "비만",
+        "richnessGrade": "보통",
+        "ageBand": "성견기(3-7세)",
+        "weightBand": "5-10kg",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "있음",
+        "allergenCategories": [
+          "가금류 단백질"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "건사료",
+        "observedOtus": 40.0,
+        "shannon": 3.217,
+        "simpson": 0.815,
+        "richnessScore": 45.59,
+        "bacteroidetes": 0.03,
+        "firmicutes": 92.08,
+        "lactobacillusTotal": 0.0,
+        "bifidobacteriumTotal": 66.0,
+        "attentionPathogenTotal": 1463.0,
+        "topTaxa": [
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__[Ruminococcus]; s__gnavus",
+            "value": 26229.0
+          },
+          {
+            "name": "p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__luteciae",
+            "value": 17988.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae",
+            "value": 3068.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Peptostreptococcaceae",
+            "value": 2323.0
+          },
+          {
+            "name": "p__Firmicutes; c__Erysipelotrichi; o__Erysipelotrichales; f__Erysipelotrichaceae; g__[Eubacterium]; s__dolichum",
+            "value": 1717.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Lachnospiraceae; g__Coprococcus; s__",
+            "value": 1633.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ngs_sample_036",
+      "type": "ngs_record",
+      "title": "ANON-DOG-036 익명 NGS 샘플 - 비만",
+      "keywords": [
+        "ANON-DOG-036",
+        "비만",
+        "양호",
+        "없음",
+        "급여",
+        "NGS",
+        "PHR",
+        "마이크로바이옴",
+        "유익균",
+        "장내균",
+        "정보 없음",
+        "없음",
+        "비만",
+        "체중",
+        "대사"
+      ],
+      "text": "ANON-DOG-036 익명 PHR/NGS 샘플입니다. 질환군은 비만, 풍부도 등급은 양호, 나이대는 시니어(8세 이상), 체중대는 3kg 미만, 성별은 암컷입니다. 유산균 급여는 급여, 알러지 보유 여부는 없음, 알러지원 카테고리는 정보 없음입니다. 치료/관리 이력 카테고리는 없음, 주급여 사료 유형은 생식, 배변습관은 실외배변입니다. NGS 지표는 observed OTUs 125.0, Shannon 5.577, Simpson 0.968, 풍부도 점수 83.65입니다. Bacteroidetes 24.85%, Firmicutes 47.04%, 기타 28.1%. Lactobacillus 계열 합산값 648.0, Bifidobacterium 계열 합산값 3142.0, 주의 균 후보 합산값 21.0. 주요 검출 균/분류군은 p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae 6181.0, p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__ 5084.0, p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__ 3681.0, p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Prevotellaceae; g__Prevotella; s__copri 3574.0, p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__ 3395.0, p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__animalis 3118.0입니다.",
+      "metadata": {
+        "anonymousId": "ANON-DOG-036",
+        "diseaseGroup": "비만",
+        "richnessGrade": "양호",
+        "ageBand": "시니어(8세 이상)",
+        "weightBand": "3kg 미만",
+        "sex": "암컷",
+        "probiotic": "급여",
+        "allergyStatus": "없음",
+        "allergenCategories": [
+          "정보 없음"
+        ],
+        "treatmentCategories": [
+          "없음"
+        ],
+        "foodType": "생식",
+        "observedOtus": 125.0,
+        "shannon": 5.577,
+        "simpson": 0.968,
+        "richnessScore": 83.65,
+        "bacteroidetes": 24.85,
+        "firmicutes": 47.04,
+        "lactobacillusTotal": 648.0,
+        "bifidobacteriumTotal": 3142.0,
+        "attentionPathogenTotal": 21.0,
+        "topTaxa": [
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae",
+            "value": 6181.0
+          },
+          {
+            "name": "p__Fusobacteria; c__Fusobacteriia; o__Fusobacteriales; f__Fusobacteriaceae; g__Fusobacterium; s__",
+            "value": 5084.0
+          },
+          {
+            "name": "p__Firmicutes; c__Clostridia; o__Clostridiales; f__Veillonellaceae; g__Megamonas; s__",
+            "value": 3681.0
+          },
+          {
+            "name": "p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Prevotellaceae; g__Prevotella; s__copri",
+            "value": 3574.0
+          },
+          {
+            "name": "p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Alcaligenaceae; g__Sutterella; s__",
+            "value": 3395.0
+          },
+          {
+            "name": "p__Actinobacteria; c__Actinobacteria; o__Bifidobacteriales; f__Bifidobacteriaceae; g__Bifidobacterium; s__animalis",
+            "value": 3118.0
+          }
+        ]
+      }
+    }
+  ]
+}
