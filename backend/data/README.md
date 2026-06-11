@@ -1,10 +1,10 @@
-# RAG Data
+#RAG 데이터
 
-`rag-documents.json` is a public-safe corpus for the INFODOG RAG demo.
+rag-documents.json은 INFODOG RAG 데모를 위한 공개 안전 corpus입니다.
 
-- 100 anonymized NGS records converted from the original 100-record workbook
-- Includes project method notes, demo PHR/NGS context, nutrition guidance, and anonymized NGS records
-- Removes dog names, exact birth dates, raw allergen text, raw treatment text, and original row numbers
-- Keeps disease group, age band, weight band, broad allergy/treatment categories, and NGS diversity/taxa values
+-원본 100개 PHR, NGS 데이터 샘플에서 변환한 **익명화**된 NGS 기록 100건을 포함합니다.  
+-프로젝트 방법론 노트, 데모용 PHR/NGS 맥락, 영양 가이드, 익명화된 NGS 기록을 포함합니다.  
+-반려견 이름, 정확한 생년월일, 원본 알레르기 텍스트, 원본 치료 텍스트, 기존 행 번호는 제거했습니다.  
+-질병군, 연령대, 체중대, 광범위한 알레르기/치료 범주, NGS 다양성 및 분류군 수치는 유지했습니다.  
 
-Do not commit raw `.xlsx`, `.pdf`, or non-anonymized generated RAG files to this repository.
+원본 `.xlsx`, `.pdf`, 또는 익명화되지 않은 생성 RAG 파일은 이 repository에 commit하지 마세요.
