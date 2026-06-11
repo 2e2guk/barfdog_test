@@ -27,6 +27,44 @@ assert.ok(sourceIds(digestiveSkin).includes("ngs_max_demo_profile"));
 assert.ok(digestiveSkin.risks.some((risk) => risk.target.includes("피부염")));
 assert.ok(digestiveSkin.risks.some((risk) => risk.target.includes("IBD")));
 
+const coughOnly = retrieveRagContext("맥스가 오늘 기침만 조금 해. NGS랑 관련이 있어?", {
+  isPetHealthQuestion: true,
+  shouldRecommendDiet: false,
+});
+
+assert.equal(coughOnly.enabled, true);
+assert.ok(coughOnly.structured.symptoms.includes("호흡기 증상"));
+assert.ok(coughOnly.risks.some((risk) => risk.target.includes("호흡기")));
+
+const respiratoryOnly = retrieveRagContext("맥스가 오늘 기침만 조금 해", {
+  isPetHealthQuestion: true,
+  shouldRecommendDiet: false,
+});
+
+assert.equal(respiratoryOnly.enabled, true);
+assert.ok(respiratoryOnly.structured.symptoms.includes("호흡기 증상"));
+assert.ok(!sourceIds(respiratoryOnly).includes("ngs_max_demo_profile"));
+assert.ok(!respiratoryOnly.documents.some((doc) => doc.type === "ngs_record"));
+
+const constipationWithResolvedCough = retrieveRagContext("맥스가 오늘은 변이 너무 딱딱해. 기침은 멈췄는데 뭐가 문제지?", {
+  isPetHealthQuestion: true,
+  shouldRecommendDiet: false,
+});
+
+assert.equal(constipationWithResolvedCough.enabled, true);
+assert.ok(constipationWithResolvedCough.structured.symptoms.includes("소화기/배변 이상"));
+assert.ok(!constipationWithResolvedCough.structured.symptoms.includes("호흡기 증상"));
+
+const appetiteSymptom = retrieveRagContext("맥스가 밥을 잘 안 먹고 기운이 없어", {
+  isPetHealthQuestion: true,
+  shouldRecommendDiet: false,
+});
+
+assert.equal(appetiteSymptom.enabled, true);
+assert.ok(appetiteSymptom.structured.symptoms.includes("식욕 저하"));
+assert.ok(!appetiteSymptom.structured.intent.includes("맞춤 식이 솔루션 요청"));
+assert.ok(!sourceIds(appetiteSymptom).includes("nutrition_barf_kangaroo"));
+
 const diet = retrieveRagContext("알러지 개선을 위해 바프독 식단을 추천해줘", {
   isPetHealthQuestion: true,
   shouldRecommendDiet: true,

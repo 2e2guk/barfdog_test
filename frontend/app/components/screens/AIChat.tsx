@@ -109,19 +109,21 @@ const DIET_RECOMMENDATION_KEYWORDS = [
   "단백질",
   "캥거루",
   "추천",
-  "먹",
   "급여",
+  "먹여",
+  "먹일",
+  "바꿔",
+  "바꾸",
 ];
 
 function isPetHealthQuestion(question: string) {
   return PET_HEALTH_KEYWORDS.some((keyword) => question.includes(keyword));
 }
 
-function shouldShowDietRecommendation(question: string, answerIndex: number) {
+function shouldShowDietRecommendation(question: string) {
   return (
-    answerIndex === 2 ||
-    (isPetHealthQuestion(question) &&
-      DIET_RECOMMENDATION_KEYWORDS.some((keyword) => question.includes(keyword)))
+    isPetHealthQuestion(question) &&
+    DIET_RECOMMENDATION_KEYWORDS.some((keyword) => question.includes(keyword))
   );
 }
 
@@ -455,11 +457,7 @@ export default function AIChat({
 
     const now = Date.now();
     const loadingId = now + 1;
-    const completedAnswers =
-      messages.filter((message) => message.role === "assistant" && !message.isGenerating).length -
-      1;
-    const answerIndex = completedAnswers + 1;
-    const shouldRecommendDiet = shouldShowDietRecommendation(text, answerIndex);
+    const shouldRecommendDiet = shouldShowDietRecommendation(text);
     const isHealthQuestion = isPetHealthQuestion(text);
     const chatHistory = createGeminiHistory(messages);
 
