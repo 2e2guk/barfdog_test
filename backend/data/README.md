@@ -1,4 +1,4 @@
-#RAG 데이터
+# RAG 데이터
 
 rag-documents.json은 INFODOG RAG 데모를 위한 공개 안전 corpus입니다.
 
