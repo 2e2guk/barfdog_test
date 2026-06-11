@@ -92,6 +92,15 @@ function looksLikePetHealthQuestion(message) {
   );
 }
 
+function cleanReplyText(text) {
+  return String(text || "")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\s*\[[^\]\n]*(?:\d|PHR|NGS|건강 기록|검색|근거)[^\]\n]*\]/g, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 async function sendWithModel(modelName, history, prompt, attachment) {
   const model = genAI.getGenerativeModel({
     model: modelName,
@@ -177,8 +186,9 @@ app.post("/api/chat", async (req, res) => {
     }
 
     const { reply, model } = await generateWithFallbacks(history, prompt, attachment);
+    const cleanedReply = cleanReplyText(reply);
     return res.json({
-      reply,
+      reply: cleanedReply,
       model,
       rag: rag?.enabled
         ? {
