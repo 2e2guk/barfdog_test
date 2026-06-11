@@ -1,6 +1,7 @@
 const { retrieveRagContext } = require("../rag/retriever");
 
-const sampleQuestions = [
+const cliQuestion = process.argv.slice(2).join(" ").trim();
+const sampleQuestions = cliQuestion ? [cliQuestion] : [
   "맥스가 배를 자주 긁고 변이 묽은데 NGS랑 관련이 있을까?",
   "알러지 개선을 위해 바프독 식단을 추천해줘",
   "NGS 결과에서 유익균이 부족하면 어떻게 관리해야 해?",

@@ -50,7 +50,7 @@ npm install
 npm run dev
 ```
 
-`backend/.env`에 Gemini API 키 설정 필요
+`backend/.env`에 Gemini API 키 설정 필요. 실제 키는 GitHub에 올리지 않습니다.
 
 ```text
 GEMINI_API_KEY=your_api_key_here
@@ -69,10 +69,22 @@ http://localhost:5000/api/chat
 NEXT_PUBLIC_AI_CHAT_API_URL=http://localhost:5000/api/chat
 ```
 
+이미 3000/5000 포트를 다른 서버가 쓰고 있다면 아래처럼 3001/5001 조합으로 실행할 수 있습니다.
+
+```bash
+cd backend
+PORT=5001 CORS_ORIGIN=http://localhost:3001 npm run dev
+```
+
+```bash
+cd frontend
+NEXT_PUBLIC_AI_CHAT_API_URL=http://localhost:5001/api/chat npm run dev -- -p 3001
+```
+
 ### RAG 동작 방식
 
 파인튜닝 대신 `backend/data/rag-documents.json`의 PHR, NGS, 식단 근거를 검색해 Gemini 프롬프트에 주입합니다.
-이 파일은 GitHub 공개를 위해 원본 NGS 100마리 데이터에서 36건만 계층 샘플링한 익명화 코퍼스입니다. 반려견 이름, 정확한 생년월일, 알러지원 원문, 자유서술 치료 내용, 원본 row 번호는 포함하지 않습니다.
+이 파일은 GitHub 공개를 위해 원본 NGS 100마리 데이터를 전부 익명화한 코퍼스입니다. 반려견 이름, 정확한 생년월일, 알러지원 원문, 자유서술 치료 내용, 원본 row 번호는 포함하지 않습니다.
 
 - 사용자 질문을 증상, 의도, 타겟 질환 후보로 구조화
 - PHR/NGS 기반 위험도 예측 결과를 생성
@@ -85,6 +97,13 @@ Gemini API 키 없이 RAG 검색 결과만 먼저 확인하려면:
 ```bash
 cd backend
 npm run rag:preview
+```
+
+원하는 질문 하나만 지정해서 확인하려면:
+
+```bash
+cd backend
+npm run rag:preview -- "알러지랑 묽은 변이 같이 있으면 NGS에서 뭘 봐야 해?"
 ```
 
 백엔드 서버 실행 후 RAG만 API로 확인하려면:

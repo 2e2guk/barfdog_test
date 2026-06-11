@@ -9,8 +9,8 @@ function sourceIds(result) {
 
 const records = corpus.documents.filter((doc) => doc.type === "ngs_record");
 
-assert.equal(corpus.anonymization.sampleSize, 36);
-assert.equal(records.length, 36);
+assert.equal(corpus.anonymization.sampleSize, 100);
+assert.equal(records.length, 100);
 assert.ok(records.every((doc) => doc.id.startsWith("ngs_sample_")));
 assert.ok(records.every((doc) => doc.metadata?.anonymousId?.startsWith("ANON-DOG-")));
 assert.ok(records.every((doc) => !("dogName" in doc.metadata)));
